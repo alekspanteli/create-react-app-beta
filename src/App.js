@@ -1,18 +1,19 @@
-import "./styles.css";
-
+import * as test from "./scss/index.module.scss"
 
 const MyButton = () =>{
     return (
-    <button>I'm a button</button>
+    <button className={test.button}>I'm a button</button>
   );
 }
 
 
 
-export default function App() {
+const App = () => {
   return (
-    <div className="App">
+    <div className={test.app}>
       <MyButton />
     </div>
   );
 }
+
+export default App;
