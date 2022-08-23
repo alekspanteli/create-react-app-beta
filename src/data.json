@@ -1,0 +1,17 @@
+[
+    { 
+        "product": "Apple", 
+        "id": 1,
+        "isFruit": false 
+    },
+    { 
+        "product": "Orange", 
+        "id": 2,
+        "isFruit": false 
+    },
+    { 
+        "product": "Kiwi", 
+        "id": 3,
+        "isFruit": true  
+    }
+]
