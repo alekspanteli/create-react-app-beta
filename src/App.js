@@ -1,16 +1,24 @@
-// import * as css from "./scss/index.module.scss";
 import "./scss/index.scss";
-// import UserName from "./images/user.png";
-import Records from "./data.json";
+import { useState } from "react";
+
+const MyButton = ({ count, onClick }) => {
+  return (
+    <button onClick={onClick} className="button">
+      Clicked {count} times
+    </button>
+  );
+};
 
 const App = () => {
+  const [count, setCount] = useState(0);
+  function handleClick() {
+    setCount(count + 1);
+  }
   return (
     <div className="container">
-      <ul>
-        {Records.map((product) => (
-          <li key={product.id}>{product.title}</li>
-        ))}
-      </ul>
+      <h1>Counters that update together</h1>
+      <MyButton count={count} onClick={handleClick} />
+      <MyButton count={count} onClick={handleClick} />
     </div>
   );
 };

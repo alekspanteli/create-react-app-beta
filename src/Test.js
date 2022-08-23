@@ -83,3 +83,86 @@ const listItems = Records.map((product) => (
 const App = () => {
   return <div className="container">{listItems}</div>;
 };
+
+const App = () => {
+  return (
+    <div className="container">
+      <ul>
+        {Records.map((product) => (
+          <li
+            key={product.id}
+            style={{ color: product.isFruit ? "red" : "green" }}
+          >
+            {product.product}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+const MyButton = () => {
+  const handleClick = () => {
+    alert("You clicked me!");
+  };
+
+  return (
+    <button onClick={handleClick} className="button">
+      I'm a button
+    </button>
+  );
+};
+
+
+import "./scss/index.scss";
+import { useState } from "react";
+
+const MyButton = () => {
+  const [count, setCount] = useState(0);
+  function handleClick() {
+    setCount(count + 1);
+  }
+  return (
+    <button onClick={handleClick} className="button">
+      Clicked {count} times
+    </button>
+  );
+};
+
+const App = () => {
+  return (
+    <div className="container">
+      <MyButton />
+    </div>
+  );
+};
+
+export default App;
+
+
+import "./scss/index.scss";
+import { useState } from "react";
+
+const MyButton = ({ count, onClick }) => {
+  return (
+    <button onClick={onClick} className="button">
+      Clicked {count} times
+    </button>
+  );
+};
+
+const App = () => {
+  const [count, setCount] = useState(0);
+  function handleClick() {
+    setCount(count + 1);
+  }
+  return (
+    <div className="container">
+      <h1>Counters that update together</h1>
+      <MyButton count={count} onClick={handleClick} />
+      <MyButton count={count} onClick={handleClick} />
+    </div>
+  );
+};
+
+export default App;

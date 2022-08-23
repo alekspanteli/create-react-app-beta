@@ -1,14 +1,17 @@
 [
     { 
-        "title": "Alex", 
-        "id": 1 
+        "product": "Apple", 
+        "id": 1,
+        "isFruit": false 
     },
     { 
-        "title": "Nicos", 
-        "id": 2 
+        "product": "Orange", 
+        "id": 2,
+        "isFruit": false 
     },
     { 
-        "title": "Rafael", 
-        "id": 3 
+        "product": "Kiwi", 
+        "id": 3,
+        "isFruit": true  
     }
 ]
